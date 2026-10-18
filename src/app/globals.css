@@ -1,0 +1,47 @@
+@import "tailwindcss";
+
+/* Palette taken from the "You deserve a DONUT" sign on the shop's Facebook page:
+   tan sunburst rays on cream, chocolate script, berry-red block letters, pink frosting. */
+@theme {
+  --color-cream: #fff7ec;
+  --color-dough: #f6e7d2;
+  --color-ray: #e3c6a4;
+  --color-caramel: #b9835a;
+  --color-cocoa: #4b2a1c;
+  --color-cocoa-deep: #2e1a11;
+  --color-berry: #d6304f;
+  --color-berry-deep: #a81f3b;
+  --color-frosting: #f7b3c6;
+  --color-ink: #2a1a14;
+  --color-muted: #6b574b;
+}
+
+/* `inline` so utilities reference the next/font variables directly rather than resolving them on :root. */
+@theme inline {
+  --font-script: var(--font-yellowtail), "Brush Script MT", cursive;
+  --font-display: var(--font-alfa-slab), Rockwell, Georgia, serif;
+  --font-sans: var(--font-nunito), ui-sans-serif, system-ui, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 6.5rem;
+}
+
+body {
+  background: var(--color-cream);
+  color: var(--color-ink);
+}
+
+/* Block letters with the chocolate drop shadow from the sign. */
+.sign-letters {
+  text-shadow:
+    2px 2px 0 var(--color-cocoa),
+    4px 4px 0 var(--color-cocoa);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
